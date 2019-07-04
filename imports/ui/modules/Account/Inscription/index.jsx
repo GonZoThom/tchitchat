@@ -6,8 +6,8 @@ import Fields from './Fields';
 
 const Inscription = () => {
   const [ email,    setEmail    ] = useState("");
-  const [ password, setPassword ] = useState("");
   const [ username, setUsername ] = useState("");
+  const [ password, setPassword ] = useState("");
 
   const update = useCallback((e, { name, value }) => {
     switch(name) {

@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Link } from 'react-router-dom';
-import { withTracker } from 'meteor/react-meteor-data'
 
 import Fields from './Fields';
 
