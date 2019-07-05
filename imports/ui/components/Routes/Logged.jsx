@@ -4,8 +4,6 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Route, Redirect } from 'react-router-dom';
 
 const Logged = ({ path, component, userId }) => {
-    console.log(userId);
-    
     if (!userId) {
         return <Redirect to="/" />
     }

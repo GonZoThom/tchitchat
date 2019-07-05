@@ -1,17 +1,17 @@
 import React from 'react';
-// import { Meteor } from 'meteor/meteor';
-// import { withTracker } from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
 
+// console.log(userId);
 const Home = () => {    
-    // console.log(userId);
     return (
         <div>
-            <h2>THIS IS A LANDING PAGE !</h2>
+            <h2>THIS IS A LANDING HOME PAGE !</h2>
         </div>
     )
 };
 
-export default Home;
-// export default withTracker(() => ({
-//     userId: Meteor.userId(),
-// }))(Home);
+// export default Home;
+export default withTracker(() => ({
+    userId: Meteor.userId(),
+}))(Home);
