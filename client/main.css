@@ -3,3 +3,25 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
   font-size: 16px;
 }
+a{
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link{
+  color: white;
+  background-color: purple;
+  margin: 4px;
+  font-size: 1.2em;
+  padding: .4em .8em;
+  border-radius: 6px;
+  border: 1px solid purple;
+  min-width: 40px;
+  text-align: center;
+}
+
+.link:hover{
+  color: purple;
+  background-color: white;
+  border: 1px solid purple;
+}

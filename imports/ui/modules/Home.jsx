@@ -10,8 +10,8 @@ const Home = () => {
             <h2>THIS IS A LANDING HOME PAGE !</h2>
             <p>Bienvenue sur Tchitchat - <br/> 
                 <em>L'application de messageire du futur</em></p>
-            <Link to="/signin" >Se Connecter</Link>
-            <Link to="/signup" >S'inscrire</Link>
+            <Link to="/signin" className="link">Se Connecter</Link>
+            <Link to="/signup" className="link">S'inscrire</Link>
         </div>
     )
 };
