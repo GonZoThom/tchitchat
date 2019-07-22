@@ -14,6 +14,7 @@
 * créer un compte
 * se connecter
 * modifier son profil
+  # Pour plus tard : une photo de profil ?
   * son pseudo
   * son adresse mail
   * son genre

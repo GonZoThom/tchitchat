@@ -17,7 +17,11 @@ const Rooms = (props) => {
     
     return (
         // On test si l'Id est definit et on affiche en fonction.
-        ( roomId !== undefined ? <Chatbox /> : <List/>)
+        (roomId !== undefined ? 
+            <Chatbox roomId={roomId} /> 
+        : 
+            <List />
+        )
     )
 };
 
