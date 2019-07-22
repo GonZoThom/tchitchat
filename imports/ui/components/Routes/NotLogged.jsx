@@ -5,7 +5,7 @@ import { Route, Redirect } from 'react-router-dom';
 
 const NotLogged = ({ path, component, userId }) => {
     if (userId) {
-        return <Redirect to="/signin" />
+        return <Redirect to="/rooms" />
     }
     return <Route path={path} component={component} />
 };

@@ -5,7 +5,7 @@ import { Route, Redirect } from 'react-router-dom';
 
 const Logged = ({ path, component, userId }) => {
     if (!userId) {
-        return <Redirect to="/" />
+        return <Redirect to="/home" />
     }
     return <Route path={path} component={component} />
 };

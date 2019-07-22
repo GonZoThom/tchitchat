@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import Logged     from '/imports/ui/components/Routes/Logged';
 import NotLogged  from '/imports/ui/components/Routes/NotLogged';
-import Home       from '/imports/ui/modules/Home';
+import Landing    from '/imports/ui/modules/Landing';
 import Rooms      from '/imports/ui/modules/Rooms';
 import Users      from '/imports/ui/modules/Users';
 
@@ -18,10 +18,10 @@ import {
 const App = () => (
   <Router>
     <Switch>
-      <NotLogged    path="/home"           component={Home}         />
+      <NotLogged    path="/landing"        component={Landing}      />
       <Logged       path="/rooms/:id"      component={Rooms}        />
       <Logged       path="/users/:id"      component={Users}        />
-      <NotLogged    path="/signin"         component={Connexion}   />
+      <NotLogged    path="/signin"         component={Connexion}    />
       <NotLogged    path="/signup"         component={Inscription}  />
       <NotLogged    path="/missing"        component={Missing}      />
       <Logged       path="/settings"       component={Settings}     />
