@@ -19,7 +19,7 @@ const App = () => (
   <Router>
     <Switch>
       <NotLogged    path="/landing"        component={Landing}      />
-      <Logged       path="/rooms/:id"      component={Rooms}        />
+      <Logged       path="/rooms/:id?"      component={Rooms}        />
       <Logged       path="/users/:id"      component={Users}        />
       <NotLogged    path="/signin"         component={Connexion}    />
       <NotLogged    path="/signup"         component={Inscription}  />

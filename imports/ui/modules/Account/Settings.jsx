@@ -2,7 +2,6 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 
-// console.log(userId);
 const Settings = () => {
     return (
         <div>
@@ -11,7 +10,6 @@ const Settings = () => {
     )
 };
 
-// export default Settings;
 export default withTracker(() => ({
     userId: Meteor.userId(),
 }))(Settings);
