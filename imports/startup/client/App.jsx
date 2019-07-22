@@ -8,7 +8,7 @@ import Rooms      from '/imports/ui/modules/Rooms';
 import Users      from '/imports/ui/modules/Users';
 
 import {
-  Connection,
+  Connexion,
   Inscription,
   Missing,
   Settings,
@@ -21,7 +21,7 @@ const App = () => (
       <NotLogged    path="/home"           component={Home}         />
       <Logged       path="/rooms/:id"      component={Rooms}        />
       <Logged       path="/users/:id"      component={Users}        />
-      <NotLogged    path="/signin"         component={Connection}   />
+      <NotLogged    path="/signin"         component={Connexion}   />
       <NotLogged    path="/signup"         component={Inscription}  />
       <NotLogged    path="/missing"        component={Missing}      />
       <Logged       path="/settings"       component={Settings}     />

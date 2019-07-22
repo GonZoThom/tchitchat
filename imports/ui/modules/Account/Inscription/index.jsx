@@ -45,7 +45,7 @@ const Inscription = () => {
         onClick={signup}
       >Signup
       </button>
-      <Link to="signin">Connection</Link>
+      <Link to="signin">Connexion</Link>
     </div>
   );
 }

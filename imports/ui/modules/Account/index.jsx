@@ -1,11 +1,11 @@
-import Connection from "./Connection";
+import Connexion from "./Connexion";
 import Inscription from "./Inscription";
 import Missing from "./Missing";
 import Settings from "./Settings";
 import Verify from "./Verify";
 
 export {
-    Connection,
+    Connexion,
     Inscription,
     Missing,
     Settings,

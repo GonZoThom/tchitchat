@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Route, Redirect } from 'react-router-dom';
 
-const NoLogged = ({ path, component, userId }) => {
+const NotLogged = ({ path, component, userId }) => {
     if (userId) {
         return <Redirect to="/signin" />
     }
@@ -12,4 +12,4 @@ const NoLogged = ({ path, component, userId }) => {
 
 export default withTracker(() => ({
     userId: Meteor.userId(),
-}))(NoLogged);
+}))(NotLogged);

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Fields from './Fields';
 
-const Connection = () => {
+const Connexion = () => {
   const [ password, setPassword ] = useState("");
   const [ username, setUsername ] = useState("");
 
@@ -29,7 +29,7 @@ const Connection = () => {
   return (
   <div>
     <section>
-      <h1>Connection</h1>
+      <h1>Connexion</h1>
       <Fields
         update={update}
         state={{ username, password }}
@@ -44,4 +44,4 @@ const Connection = () => {
   );
 }
 
-export default Connection;
+export default Connexion;
