@@ -1,9 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 import Rooms from '..';
 
-Meteor.publish('Rooms.lasts', () => {
+Meteor.publish('rooms.all', () => {
   return Rooms.find({}, {
     // sort: { createdAt: -1 },
-    // limit: 50,
+    // limit: 20,
   });
 });
