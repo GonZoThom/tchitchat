@@ -4,7 +4,17 @@ const List = () => {
     // Create or Join a Room (Create can be another component)
     return (
         <div>
-            <h2>Future List</h2>
+            <section>
+                <button
+                    onClick={Meteor.logout}
+                >Logout
+                </button>
+                <h2>ROOMS</h2>
+                <span><em>component 'Create'</em></span>
+                <h3>Mes Salons</h3>
+                <span><em>Afficher les rooms propriétaires ou demander si email vérifié</em></span>
+                <h3>Tous les Salons</h3>
+            </section>
         </div>
     )
 };
