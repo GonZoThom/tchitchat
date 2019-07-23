@@ -8,7 +8,7 @@ const CreateForm = ({ history }) => {
     const update = useCallback((e, { name, value }) => {
         if(name = "name")
             setName(value);
-    }, [ setName ])
+    }, [ setName ]);
 
     const create = useCallback(() => {
         Meteor.call("rooms.create", { name }, (err) => {

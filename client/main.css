@@ -7,6 +7,10 @@ a{
   text-decoration: none;
   font-weight: bold;
 }
+.roomLink{
+  border: '2px groove darkpurple';
+  box-shadow: 2px 2px 7px lightgray;
+}
 
 .link{
   color: white;
