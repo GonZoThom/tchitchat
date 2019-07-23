@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import Rooms from '..';
 
 Meteor.methods({
-  "Rooms.create"({ name }) {
+  "rooms.create"({ name }) {
     if (!this.userId) {
       throw new Meteor.Error('403', 'Vous devez être un utilsateur vérifié pour créer un salon !');
     }
@@ -13,7 +13,7 @@ Meteor.methods({
     });
   },
 
-  "Rooms.update"({ id, name }) {
+  "rooms.update"({ id, name }) {
     if (!this.userId) {
       throw new Meteor.Error('403', 'Vous devez être un utilsateur vérifié pour accèder à un salon !');
     }
@@ -27,7 +27,7 @@ Meteor.methods({
     Rooms.update(id, { $set: { name } });
   },
 
-  "Rooms.remove"({ id }) {
+  "rooms.remove"({ id }) {
     if (!this.userId) {
       throw new Meteor.Error('403', 'Vous devez être un utilsateur vérifié pour accèder à un salon !');
     }
