@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Room = ({ room, userId, show}) => (
+const Room = ({ room, userId, show }) => (
     <div>
         {(show) ? (
             <article className="roomLink">

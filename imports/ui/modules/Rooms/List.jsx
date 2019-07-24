@@ -1,5 +1,5 @@
 import React from 'react';
-import CreateForm from './CreateForm';
+import ManageRoomsForm from './ManageRoomsForm';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 
@@ -22,7 +22,7 @@ const List = ({ user, userId, loading, rooms }) => {
                 <button onClick={Meteor.logout}>Logout</button>
                 <h2>ROOMS</h2>
                 <p>Bienvenue sur Tchitchat <span>{user.username}</span></p>
-                <CreateForm />
+                <ManageRoomsForm create='true' />
                 <h3>Mes Salons</h3>
                     <Loader
                         loading={loading}
