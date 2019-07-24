@@ -1,0 +1,33 @@
+##### ManageRoomsForm.jsx
+
+    const createRoom = useCallback(() => {
+        console.log(name + ' 01')
+        const checkDuplicate = () => {
+            console.log(name + ' 02')
+            Meteor.call("rooms.checkDuplicate", {name}, (err) =>{
+                if (err)
+                console.log(err);
+            });
+        };
+        
+        (checkDuplicate === true) ?
+            console.log(name + ' true')
+            // alert('Ce nom de salon est déjà pris. Merci d\'en chosir un autre !')
+        :
+            console.log(name + ' false')
+            // Meteor.call("rooms.create", { name }, (err) => {
+            //     if (err)
+            //         console.log(err);
+            // })
+            ;
+
+    }, [name]);
+
+
+##### Methods.js
+
+  "rooms.checkDuplicate"({ value }) {
+    if (Rooms.findOne({name: value })) {
+      return true;
+    }
+  },

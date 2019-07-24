@@ -7,6 +7,7 @@ a{
   text-decoration: none;
   font-weight: bold;
 }
+
 .roomLink{
   border: 2px groove darkorchid;
   box-shadow: -4px 8px 8px lightgray;
@@ -14,6 +15,21 @@ a{
   margin: 1em 0;
   width: 80%;
   border-radius: 4px;
+}
+
+.roomLink h4 {
+  display: inline-block;
+  margin: .2em;
+  text-align: left;
+  font-size: 1.2em;
+}
+
+.roomLink p{
+  margin: 0.6em;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .link{
