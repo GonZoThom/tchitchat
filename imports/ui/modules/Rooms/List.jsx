@@ -16,19 +16,14 @@ const List = ({ user, userId, loading, rooms }) => {
     //     });
     // }, []);
 
-    // const owner = () => (room.ownerId === userId) ? true : false;
-    // console.log(owner());
-
     return (
         <div>
             <section>
                 <button onClick={Meteor.logout}>Logout</button>
                 <h2>ROOMS</h2>
                 <p>Bienvenue sur Tchitchat <span>{user.username}</span></p>
-                {/* <span><em>component 'Create'</em></span> */}
                 <CreateForm />
                 <h3>Mes Salons</h3>
-                    {/* <span><em>Afficher les rooms propriétaires ou demander si email vérifié</em></span> */}
                     <Loader
                         loading={loading}
                         render={rooms.map(room =>
@@ -36,8 +31,7 @@ const List = ({ user, userId, loading, rooms }) => {
                                 key={room._id}
                                 userId={userId}
                                 room={room}
-                                show={(room.ownerId === userId) ? true : false}                                
-                            // remove={remove}
+                                show={(room.ownerId === userId) ? true : false}
                             />
                         )}
                     />
@@ -60,7 +54,7 @@ const List = ({ user, userId, loading, rooms }) => {
 export default withTracker(() => {
     const roomsPublication = Meteor.subscribe('rooms.all');
     const loading = !roomsPublication.ready();
-    const rooms = Rooms.find({}, { sort: { createdAt: -1 } }).fetch();
+    const rooms = Rooms.find().fetch();
     return {
         userId: Meteor.userId(),
         user: Meteor.user() || {},
