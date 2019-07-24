@@ -8,9 +8,12 @@ a{
   font-weight: bold;
 }
 .roomLink{
-  border: 2px groove darkpurple;
-  box-shadow: -2px 4px 7px lightgray;
+  border: 2px groove darkorchid;
+  box-shadow: -4px 8px 8px lightgray;
   padding: 5px 10px;
+  margin: 1em 0;
+  width: 80%;
+  border-radius: 4px;
 }
 
 .link{
