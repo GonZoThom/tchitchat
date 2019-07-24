@@ -17,33 +17,32 @@ const ManageRoomsForm = ({ create, modify, remove, roomId }) => {
     }, [name]);
 
     const modifyRoom = useCallback(() => {
-        Meteor.call("rooms.update", { roomId, name }, (err) => {
+        Meteor.call("rooms.update", { id: roomId, name: name }, (err) => {
             if (err)
                 console.log(err);
         });
     }, [name]);
 
     const removeRoom = useCallback(() => {
-        Meteor.call("rooms.remove", { roomId }, (err) => {
+        Meteor.call("rooms.remove", { id: roomId }, (err) => {
             if (err)
                 console.log(err);
         });
-    }, [name]);
+    });
 
     return (
         <div>
             <input  type="text" 
-                    placeholder="Nom du salon"
                     name="name"
-                    update={this.update}
                     value={name} 
+                    placeholder="Nom du salon"
+                    update={this.update}
                     onChange={(e) =>
                         update(e, e.target || {})
                     }/>
             {(create) ? <button onClick={createRoom} >Créer Salon </button> : null}
             {(modify) ? <button onClick={modifyRoom} >Modifier    </button> : null}
             {(remove) ? <button onClick={removeRoom} >Supprimer   </button> : null}
-            
         </div>
     )
 }

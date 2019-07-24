@@ -9,13 +9,6 @@ import Loader from '/imports/ui/components/Loader';
 import Room from './Room';
 
 const List = ({ user, userId, loading, rooms }) => {
-
-    // const remove = useCallback(({ target: { id } }) => {
-    //     Meteor.call('rooms.remove', { id }, (err) => {
-    //         if (err) console.log(err+"BONJOUR");
-    //     });
-    // }, []);
-
     return (
         <div>
             <section>

@@ -9,14 +9,6 @@ const Room = ({ room, userId, show }) => (
                 {(room.ownerId === userId) ?
                 <div>
                     <ManageRoomsForm roomId={room._id} modify='true' remove='true'/>
-                    {/* <button
-                        roomId={room._id}
-                    > Supprimer
-                    </button>
-                    <button
-                        roomId={room._id}
-                    >  Modifier
-                    </button> */}
                 </div>
                 : "" }
             </article>

@@ -34,7 +34,7 @@ Meteor.methods({
 
     const room = Rooms.findOne(id);
 
-    if (room.userId !== this.userId) {
+    if (room.ownerId !== this.userId) {
       throw new Meteor.Error('403', 'Vous devez être propriétaire du salon pour le supprimer !');
     }
 
