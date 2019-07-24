@@ -1,4 +1,5 @@
 import React from 'react';
+import ManageRoomsForm from './ManageRoomsForm';
 
 const Room = ({ room, userId, show }) => (
     <div>
@@ -7,14 +8,15 @@ const Room = ({ room, userId, show }) => (
                 <h4>{room.name}</h4>
                 {(room.ownerId === userId) ?
                 <div>
-                    <button
-                        id={room._id}
+                    <ManageRoomsForm roomId={room._id} modify='true' remove='true'/>
+                    {/* <button
+                        roomId={room._id}
                     > Supprimer
                     </button>
                     <button
-                        id={room._id}
+                        roomId={room._id}
                     >  Modifier
-                    </button>
+                    </button> */}
                 </div>
                 : "" }
             </article>

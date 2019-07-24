@@ -22,6 +22,7 @@ const List = ({ user, userId, loading, rooms }) => {
                 <button onClick={Meteor.logout}>Logout</button>
                 <h2>ROOMS</h2>
                 <p>Bienvenue sur Tchitchat <span>{user.username}</span></p>
+                <h3>Créer un salon</h3>
                 <ManageRoomsForm create='true' />
                 <h3>Mes Salons</h3>
                     <Loader

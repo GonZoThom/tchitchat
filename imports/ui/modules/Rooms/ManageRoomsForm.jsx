@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Meteor } from 'meteor/meteor';
 
-const ManageRoomsForm = ({ create, modify, remove, userId }) => {
+const ManageRoomsForm = ({ create, modify, remove, roomId }) => {
     const [name, setName] = useState("");
 
     const update = useCallback((e, { name, value }) => {
@@ -17,7 +17,14 @@ const ManageRoomsForm = ({ create, modify, remove, userId }) => {
     }, [name]);
 
     const modifyRoom = useCallback(() => {
-        Meteor.call("rooms.update", { userId, name }, (err) => {
+        Meteor.call("rooms.update", { roomId, name }, (err) => {
+            if (err)
+                console.log(err);
+        });
+    }, [name]);
+
+    const removeRoom = useCallback(() => {
+        Meteor.call("rooms.remove", { roomId }, (err) => {
             if (err)
                 console.log(err);
         });
@@ -25,7 +32,6 @@ const ManageRoomsForm = ({ create, modify, remove, userId }) => {
 
     return (
         <div>
-            <h3>Créer un salon</h3>
             <input  type="text" 
                     placeholder="Nom du salon"
                     name="name"
