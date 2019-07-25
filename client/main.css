@@ -42,6 +42,23 @@ a{
   color: darkorchid;
 }
 
+.chatbox .msgTxt{
+  width: 50%;
+  border: 1px solid darkblue;
+  border-radius: 15px;
+  padding: .5em;
+  color: darkblue;
+  margin: .5em 0;
+}
+
+.chatbox .msgTxt small{
+  color: darkgray;
+  font-style: italic;
+  font-weight: bold;
+  border-left: 2px solid darkgray;
+  padding-left: .2em;
+}
+
 .link{
   color: white;
   background-color: purple;
