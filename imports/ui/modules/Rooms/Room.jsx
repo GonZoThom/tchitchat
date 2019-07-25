@@ -6,16 +6,15 @@ const Room = ({ room, userId, show }) => (
     <div>
         {(show) ? (
             <article className="roomLink">
-                <p><h4>{room.name}</h4>
-                    <Link to={`/rooms/${room._id}`}>
-                        <button>go to the chat</button>
-                    </Link>
-                </p>
+                <h4>{room.name}</h4>
                 {(room.ownerId === userId) ?
                 <div>
                     <ManageRoomsForm roomId={room._id} modify='true' remove='true'/>
                 </div>
                 : "" }
+                <Link to={`/rooms/${room._id}`}>
+                    <button className="go-tchat">Let's tchat</button>
+                </Link>
             </article>
         ) : "" }
     </div>
