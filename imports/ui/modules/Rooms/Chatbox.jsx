@@ -1,18 +1,49 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
 
-const Chatbox = ({ roomId }) => {
-    // console.log(roomId);
-    // If Id exist in Mongo => Launch the chatbox 
-    // Récupérer l'ownerId en props
-    // Une fonction qui update les messages de la room !
+// Import Collections
+import Messages from '/imports/api/messages';
 
-    
-    // If Id don't exist => Redirect to List with a warning prop
+// Import Components & Template for Messages
+import Loader from '/imports/ui/components/Loader';
+import MessageForm from './MessageForm';
+import Message from './Message';
+
+const Chatbox = ({ user, userId, roomId, loading, messages }) => {
+
     return (
-        <div>
-            <h2>Future Chatbox</h2>
-        </div>
-    )
-};
+        <section className="chatbox">
+            <div>
+                <h1>Bienvenue dans le salon : "Insérer le nom de la room quand je serais moins con !!!!!!!!!!!!!!!!!"</h1>
+                <h2>Hello {user.username} !</h2>
+                <button onClick={Meteor.logout}>
+                    Logout
+                </button>
+            </div>
+            <Loader
+                loading={loading}
+                render={messages.map(msg =>
+                    <Message
+                        key={msg._id}
+                        text={msg.text}
+                        user={user}
+                    />
+                )}
+            />
+            <MessageForm roomId={roomId} />
+        </section>
+    );
+}
 
-export default Chatbox;
+export default withTracker(({ roomId }) => {
+    const messagesPublication = Meteor.subscribe('messages.lasts');
+    const loading = !messagesPublication.ready();
+    const messages = Messages.find({ room_id: roomId }).fetch();
+    return {
+        userId: Meteor.userId(),
+        user: Meteor.user() || {},
+        loading,
+        messages,
+    }
+})(Chatbox);
