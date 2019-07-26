@@ -1,3 +1,6 @@
+##### React toastify
+https://github.com/fkhadra/react-toastify
+
 ##### ManageRoomsForm.jsx
 
     const createRoom = useCallback(() => {
@@ -33,9 +36,34 @@
   },
 
 
+############# Display the room Name in the Chatbox
 ##### Chatbox.jsx
 
     // import Rooms from '/imports/api/rooms';
     // const roomName = () => Rooms.findOne({ _id: roomId }, { fields: { name: 1 } });
     // console.log("room name = ");
     // console.log(roomName.name);    
+
+
+############# Future advice on email verification
+
+You’ll need to both verify the user’s token and call the done callback within onEmailVerificationLink 18:
+
+Accounts.onEmailVerificationLink(function (token, done) {
+  Accounts.verifyEmail(token, function (error) {
+    if (error) {
+      // handle the error, perhaps by showing the user a message about an invalid token
+    }
+    done();
+  });
+});
+
+The verifyEmail function will take care of updating the users collection for you.
+Keep in mind that when you modify the user object like this:
+
+user.emails[0].verified = true;
+
+you are updating the copy of the user that you fetched from the users collection. 
+Changes you make to this copy won’t affect the collection. 
+You need to use Meteor.users.update() to modify the user 
+in a way that the server will see.

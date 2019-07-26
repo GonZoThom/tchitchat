@@ -1,7 +1,5 @@
 import React from 'react';
-// import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
-// import { withTracker } from 'meteor/react-meteor-data';
 
 const Verify = ({ match, history }) => {
     const token = match.params.token;

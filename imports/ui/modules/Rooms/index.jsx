@@ -1,6 +1,4 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { withTracker } from 'meteor/react-meteor-data';
 import Chatbox from './Chatbox';
 import List from './List';
 
@@ -16,7 +14,7 @@ const Rooms = (props) => {
     // console.log(props.match.params.roomId);
     
     return (
-        // On test si l'Id est definit et on affiche en fonction.
+        // On test si la route a un id et on affiche en fonction.
         (roomId !== undefined ? 
             <Chatbox roomId={roomId} /> 
         : 
@@ -25,6 +23,4 @@ const Rooms = (props) => {
     )
 };
 
-export default withTracker(() => ({
-    userId: Meteor.userId(),
-}))(Rooms);;
+export default Rooms;
