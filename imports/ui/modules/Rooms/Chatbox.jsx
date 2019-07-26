@@ -11,7 +11,6 @@ import MessageForm from './MessageForm';
 import Message from './Message';
 
 const Chatbox = ({ user, userId, roomId, loading, messages }) => {
-
     return (
         <section className="chatbox">
             <div>
@@ -26,8 +25,8 @@ const Chatbox = ({ user, userId, roomId, loading, messages }) => {
                 render={messages.map(msg =>
                     <Message
                         key={msg._id}
+                        owner={msg.userId}
                         text={msg.text}
-                        user={user}
                     />
                 )}
             />
