@@ -20,4 +20,8 @@ Accounts.emailTemplates.verifyEmail = {
     }
 };
 
+Meteor.publish("allUsers", function () {
+    return Meteor.users.find({}).fetch();
+});
+
 Meteor.startup(() => {});
