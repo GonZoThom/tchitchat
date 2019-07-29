@@ -20,10 +20,10 @@ const App = () => (
     <Switch>
       <NotLogged    path="/landing"         component={Landing}      />
       <Logged       path="/rooms/:roomId?"  component={Rooms}        />
-      <Logged       path="/users/:id?"       component={Users}        />
+      <Logged       path="/users/:id?"      component={Users}        />
       <NotLogged    path="/signin"          component={Connexion}    />
       <NotLogged    path="/signup"          component={Inscription}  />
-      <NotLogged    path="/missing"         component={Missing}      />
+      <Logged       path="/missing"         component={Missing}      />
       <Logged       path="/settings"        component={Settings}     />
       <Logged       path="/verify/:token"   component={Verify}       />
     </Switch>
