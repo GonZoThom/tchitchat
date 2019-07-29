@@ -34,11 +34,15 @@ const Connexion = () => {
         update={update}
         state={{ username, password }}
       />
-      <button
-        onClick={signin}
-      >Sign In
-    </button>
-      <Link to="/signup">Inscription</Link>
+        <p>
+          <button onClick={signin}>
+            Se connecter
+          </button>
+          <Link to="signup">S'inscrire</Link>
+        </p>
+        <p>
+          <Link to="missing">Mot de passe oublié ?</Link>
+        </p>
     </section>
   </div>
   );

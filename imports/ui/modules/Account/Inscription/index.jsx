@@ -41,11 +41,15 @@ const Inscription = () => {
           email,
         }}
       />
-      <button
-        onClick={signup}
-      >Signup
-      </button>
-      <Link to="signin">Connexion</Link>
+      <p>
+        <button onClick={signup}>
+          Signup
+        </button>
+        <Link to="signin">Connexion</Link>
+      </p>
+      <p>
+        <Link to="missing">Mot de passe oublié ?</Link>
+      </p>
     </div>
   );
 }
