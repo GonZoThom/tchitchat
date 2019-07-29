@@ -2,7 +2,7 @@ import React from 'react';
 
 const Loader = ({ loading, render }) => {
     if (loading)
-        return <h2>Rooms are coming...</h2>
+        return <h2>CHARGEMENT EN COURS...</h2>
     return render;
 }
 
