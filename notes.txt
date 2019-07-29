@@ -1,6 +1,9 @@
 ##### React toastify
 https://github.com/fkhadra/react-toastify
 
+##### Simple-Schema
+https://atmospherejs.com/aldeed/simple-schema#basic-usage
+
 ##### ManageRoomsForm.jsx
 
     const createRoom = useCallback(() => {
@@ -27,7 +30,7 @@ https://github.com/fkhadra/react-toastify
     }, [name]);
 
 
-##### Methods.js
+##### (Rooms) Methods.js
 
   "rooms.checkDuplicate"({ value }) {
     if (Rooms.findOne({name: value })) {
@@ -43,6 +46,14 @@ https://github.com/fkhadra/react-toastify
     // const roomName = () => Rooms.findOne({ _id: roomId }, { fields: { name: 1 } });
     // console.log("room name = ");
     // console.log(roomName.name);    
+
+
+############# Different ways to sort the rooms by owner's id ;
+-> Faire 2 méthodes de publications ; l'une pour les rooms de l'utilisateur,
+et l'autre pour tous les autres utilisateurs.
+
+-> Dans une props 'owner', on teste si c'est true or false. Ensuite, dans le component 'Room',
+on affiche d'abord les 'true', on et un titre et on continue l'affichage des autres.
 
 
 ############# Future advice on email verification

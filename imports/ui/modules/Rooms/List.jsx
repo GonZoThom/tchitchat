@@ -3,8 +3,10 @@ import ManageRoomsForm from './ManageRoomsForm';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 
+// Import de la collection mongo 'Rooms'
 import Rooms from '/imports/api/rooms';
 
+// Import des components d'affichage
 import Loader from '/imports/ui/components/Loader';
 import Room from './Room';
 
