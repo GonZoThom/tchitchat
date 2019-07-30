@@ -1,8 +1,61 @@
 ##### React toastify
 https://github.com/fkhadra/react-toastify
 
+##### React loadable
+https://github.com/jamiebuilds/react-loadable
+
 ##### Simple-Schema
 https://atmospherejs.com/aldeed/simple-schema#basic-usage
+
+##### Notes de développement (pendant la phase de rassemblement des projets)
+> Installer react-router
+> Attention indentation, même dans fichier css.
+> Bien mettre les imports ensemble (modules, component, routes, react...)
+> Matcher la racine du site "/" comme landing page (et la mettre tout en dessous des routes ou mettre un 'exact').
+> cmd cli "meteor shell" : console mais en environnement server (pour tester mail)
+> Accounts.urls.verifyEmail() -> récupère le token et l'envoi sur la route choisie en sortie (avec option { secure : true pour envoyer en https }).
+> Faire un fichier accounts.js dans le dossier server et l'importer sur le startup
+> WTF withtracker sur la Landing ? pas besoin de props.
+>>>nettoyer les withtracker des informations non utilisées
+> Alléger Users -> pas besoin de ternaire.
+> Alléger Rooms -> pas besoin de ternaire.
+> Décalage de 200 à 300 millisecondes de l'affichage du loader. 
+> Renforcer / limiter les méthodes côté server quand on appelle les collections.
+> Attention à la confusion entre Mongo et Mongo côté client. Exemple pour récupérer un nom de room :
+>>> une méthode côté serveur (api/rooms)
+>>>>>> avec des arguments wrappé dans des objets ({ id }) au lieu de ( id ) -> c'est moins lisible donc + secure
+>>> une méthode Meteor.call côté client. 
+> Différence entre useCallback et useEffect (voir les docs pour + d'infos aussi)
+>>> useEffect => excéute effectivement la fonction, elle ne retourne rien (1er param : la fonction à éxécuter, 2ème param : le state qui la trigger)
+>>> principalement pour de l'asynchrone. Il faut le coupler avec un state car il n'a pas de retour pour se trigger.
+>>> useCallback => évalue la fonction (s'il y'a des dépendances et qu'elles changent, la fonction est réévalué puis on décide ou et quand l'éxécuter)
+> Un ternaire if sans else (voir Room.jsx) : avec '&&' pour un if sans else, pour un if avec else : avec '||'.
+> Dans un return/render de components React, 3 solutions pour renvoyer un bout de code qui doit être obligatoirement englobé:
+>>> Entouré d'une nouvelle <div> : moche, inutle, BBBBBOOOOUUUUUUUUHHHHHHHHH,
+>>> Dans un tableau, dans lequel on liste nos éléments (sépraré par une ','),
+>>> Utilser le composant qui n'écrit rien dans le DOM : <Fragment />
+> C'est préférable d'enlver ces packets (surtout poyur la PROD !) :
+> autopublish : > récupère les données de la Mongo et les met dans la mini mongo automatiquement
+> insecure : les maj de la mini-mongo sont aussi envoyé directemnt et sans surveillance dans la Mongo. 
+> Toute interoggation de Mongo passe dans le withtracker ! Pour que quand la data change, le component est mit à jour
+> Le fameux : Meteor.user() || { emails: [{}] } :
+>>> user.emails[0].adress
+>>> {} [] {}
+>>> Si pas de user c'est undefined, mais on doit pouvoir entrer quand meme. Donc si user est un objet (puisqu'on fait .emails dessus)
+il faut initialiser un objet vide. Puisque on cherche après l'index d'un tableau, emails doit correspondre à un tableau vide... ainsi de suite
+pour atteindre address. 
+> Pour vérifier si l'utilisateur est vérifie dans les fichier de méthode mongo côté serveur :
+>>> const isVerified : Meteor.user().emails[0].verified 
+>>> 
+>>> Préciser les champs sur les méthodes comme sur les publciations{ fields: { name: 1}, { test: 1} }, 
+>>> pcq si un jour on rajoute des champs risqué plus tard (password en clair ou autre), la publication l'enverra....
+
+>>>>>>>>>>>>>>>>>>> Des autres projets
+> Avec, simpl-schema, pas besoin de checker l'existence et le type des valeurs donnée à la méthode. Il enverra des msg d'erreurs tous seuls.
+>>> sinon, vérifier que le contenu du msg existe, que la room existe et que l'user est connecté avant d'envoyer le msg.
+> On peut styled des component (ex les <Link />) => voir Labrik. le styled attribue une "props" "className" au composant en fait.
+> Pour valider un formulaire avec "Entrée", on le passe dans une balise form avec submit, puis on retiens l'event avec : e.preventDefault,
+>>> comme ça on peut vérifier les données (vides ? corrects ? regexp?) avant d'envoyer.
 
 ##### ManageRoomsForm.jsx
 
