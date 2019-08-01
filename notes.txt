@@ -1,6 +1,9 @@
 ##### React toastify
 https://github.com/fkhadra/react-toastify
 
+##### React Font-awesome
+https://github.com/FortAwesome/react-fontawesome
+
 ##### React loadable
 https://github.com/jamiebuilds/react-loadable
 
@@ -46,9 +49,25 @@ il faut initialiser un objet vide. Puisque on cherche après l'index d'un tablea
 pour atteindre address. 
 > Pour vérifier si l'utilisateur est vérifie dans les fichier de méthode mongo côté serveur :
 >>> const isVerified : Meteor.user().emails[0].verified 
->>> 
 >>> Préciser les champs sur les méthodes comme sur les publciations{ fields: { name: 1}, { test: 1} }, 
 >>> pcq si un jour on rajoute des champs risqué plus tard (password en clair ou autre), la publication l'enverra....
+> Si on intitialise une 'Error' comme state, par convention on la passe à 0 (setError(0)) lors de l'update.
+> En debug, 'err.reason' sera plus pour l'utilisateur, 'err.message' sera plus verbeux et servira plus au développeur.
+> Cordova :
+>>> meteor add-platform android (ou ios)
+>>> meteor run android-device : pour tester (téléphone branhcé en USB avec mode développeur activé! l'applciation doit déjà tourné sur le pc ? -> meteor run)
+>>> WARNING cordova statusbar (gérer le contexte de la barre quand une applciation lancée : changer la couleur)
+>>> WARNING cordova splashscreen (rappelle toi celui sur D4P)
+>>> TOUJOURS wrapper l'utilisation de plugin cordova avec un Meteor.isCordova().
+
+> Captain-Rover (gérer ses herbergments, sous-domaines, applications,etc...) :
+>>> mLab (unebase de donnée mongo en ligne qu'on gère avec des urls)
+>>> Pour le déploiement des variables d'environnement :
+>>>>>> ROOT_URL
+>>>>>> MONGO_URL
+>>>>>> METEOR_SETTINGS
+
+
 
 >>>>>>>>>>>>>>>>>>> Des autres projets
 > Avec, simpl-schema, pas besoin de checker l'existence et le type des valeurs donnée à la méthode. Il enverra des msg d'erreurs tous seuls.
